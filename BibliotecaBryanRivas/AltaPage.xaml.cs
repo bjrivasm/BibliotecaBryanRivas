@@ -1,9 +1,11 @@
+
 namespace BibliotecaBryanRivas;
 
-public partial class NewPage1 : ContentPage
+public partial class AltaPage : ContentPage
 {
-	public NewPage1()
+	public AltaPage()
 	{
 		InitializeComponent();
 	}
+
 }

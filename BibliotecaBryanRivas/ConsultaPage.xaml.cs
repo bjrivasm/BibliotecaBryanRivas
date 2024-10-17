@@ -1,8 +1,8 @@
 namespace BibliotecaBryanRivas;
 
-public partial class NewPage1 : ContentPage
+public partial class ConsultaPage : ContentPage
 {
-	public NewPage1()
+	public ConsultaPage()
 	{
 		InitializeComponent();
 	}
