@@ -2,11 +2,21 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BibliotecaBryanRivas.ConsultaPage"
-             Title="ConsultaPage">
+             Title="ConsultaPage"
+             BackgroundColor="Wheat">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Grid RowDefinitions="*, *" ColumnDefinitions="*, *, *">
+            <!-- PRIMERA FILA-->
+            <Label Text="Tipo de consulta:" TextColor="Black" FontSize="36" Margin="15"
+                   Grid.Row="0" Grid.ColumnSpan="3"/>
+            <RadioButton Content="Autor" Grid.Row="0" Grid.ColumnSpan="3"/>
+            <RadioButton Content="Editorial" Grid.ColumnSpan="3"/>
+            
+            <!-- SEGUNDA FILA -->
+            <Label Text="Título" FontAttributes="Bold" FontSize="Subtitle" VerticalOptions="Center" Margin="20"
+                   Grid.Row="1" Grid.Column="0"/>
+            <Label Text="prueba" FontSize="Caption" VerticalOptions="Start" Grid.Row="1" Grid.Column="0"/>
+            
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>

@@ -5,9 +5,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:BibliotecaBryanRivas"
     Shell.FlyoutBehavior="Disabled"
-    Title="BibliotecaBryanRivas">
+    Title="BibliotecaBryanRivas"
+    BackgroundColor="Wheat"
+    Shell.TabBarBackgroundColor="Wheat"
+    Shell.TabBarTitleColor="Black"
+    Shell.TabBarForegroundColor="Black">    
 
-    <TabBar>
+    <TabBar x:Name="Tabbar">
         <ShellContent Title="Principal" ContentTemplate="{DataTemplate local:MainPage}"/>
         <ShellContent Title="Alta" ContentTemplate="{DataTemplate local:AltaPage}"/>
         <ShellContent Title="Consulta" ContentTemplate="{DataTemplate local:ConsultaPage}"/>
