@@ -4,13 +4,24 @@
              x:Class="BibliotecaBryanRivas.ConsultaPage"
              Title="ConsultaPage"
              BackgroundColor="Wheat">
-    <VerticalStackLayout>
-        <Grid RowDefinitions="*, *" ColumnDefinitions="*, *, *">
-            <!-- PRIMERA FILA-->
-            <Label Text="Tipo de consulta:" TextColor="Black" FontSize="36" Margin="15"
-                   Grid.Row="0" Grid.ColumnSpan="3"/>
-            <RadioButton Content="Autor" Grid.Row="0" Grid.ColumnSpan="3"/>
-            <RadioButton Content="Editorial" Grid.ColumnSpan="3"/>
+
+    <Grid Padding="20" RowDefinitions="*, *" ColumnDefinitions="*,*,*">
+
+        <!-- FILA 1-->
+        
+        <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical">
+            <Label Grid.Row="0" Grid.Column="0" Text="Tipo de consulta:" FontSize="Large" VerticalOptions="Center" />
+            <RadioButton x:Name="radioAutor" Content="Autor" CheckedChanged="OnRadioButtonCheckedChanged" IsChecked="True"/>
+            <RadioButton x:Name="radioEditorial" Content="Editorial" CheckedChanged="OnRadioButtonCheckedChanged" />
+        </StackLayout>
+
+        <!-- FILA 2 -->
+        <Label Grid.Row="1" Grid.Column="0" Text="Título" FontSize="Large" />
+        <Label Grid.Row="1" Grid.Column="1" Text="Autor / Editorial" FontSize="Large" />
+        <Label Grid.Row="1" Grid.Column="2" Text="Portada" FontSize="Large" HorizontalOptions="Center"/>
+        
+        <!-- ListViewS -->
+        
             
             <!-- SEGUNDA FILA -->
             <Label Text="Título" FontAttributes="Bold" FontSize="Subtitle" VerticalOptions="Center" Margin="20"
