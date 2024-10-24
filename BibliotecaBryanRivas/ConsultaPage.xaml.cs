@@ -5,9 +5,6 @@ public partial class ConsultaPage : ContentPage
 	public ConsultaPage()
 	{
 		InitializeComponent();
-
-		lvTitulo.ItemsSource = Biblioteca.biblioteca;
-		lvAutorEditorial.ItemsSource = Biblioteca.biblioteca;
 	}
 
 	private void OnRadioButtonCheckedChanged(object sender, CheckedChangedEventArgs e)
@@ -16,15 +13,15 @@ public partial class ConsultaPage : ContentPage
 
 		if (radioButtonSeleccionado != null)
 		{
-			string opcionSeleccionada = radioButtonSeleccionado.ToString();
+			string opcionSeleccionada = radioButtonSeleccionado.Content.ToString();
 
 			if (opcionSeleccionada == "Autor")
 			{
-				lvAutorEditorial.ItemsSource = Biblioteca.biblioteca.Values.Select(x => x.Titulo.ToList());
+				lvAutorEditorial.ItemsSource = Biblioteca.biblioteca.Values.Select(libro => libro.Titulo.ToList());
 			}
 			else if (opcionSeleccionada == "Editorial") 
 			{
-				lvAutorEditorial.ItemsSource = Biblioteca.biblioteca.Values.Select(x => x.Editorial.ToList());
+				lvAutorEditorial.ItemsSource = Biblioteca.biblioteca.Values.Select(libro => libro.Editorial.ToList());
 			}
 		}
 	}
