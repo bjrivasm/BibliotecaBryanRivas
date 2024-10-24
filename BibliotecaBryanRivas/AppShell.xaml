@@ -9,7 +9,8 @@
     BackgroundColor="Wheat"
     Shell.TabBarBackgroundColor="Wheat"
     Shell.TabBarTitleColor="Black"
-    Shell.TabBarForegroundColor="Black">    
+    Shell.TabBarForegroundColor="Black"
+    Shell.TabBarUnselectedColor="Black">    
 
     <TabBar x:Name="Tabbar">
         <ShellContent Title="Principal" ContentTemplate="{DataTemplate local:MainPage}"/>

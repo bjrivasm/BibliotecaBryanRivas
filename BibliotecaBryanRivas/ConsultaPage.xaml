@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BibliotecaBryanRivas.ConsultaPage"
-             Title="ConsultaPage"
+             Title="Consulta"
              BackgroundColor="Wheat">
 
     <Grid Padding="20" RowDefinitions="*, *" ColumnDefinitions="*,*,*">
@@ -20,14 +19,12 @@
         <Label Grid.Row="1" Grid.Column="1" Text="Autor / Editorial" FontSize="Large" />
         <Label Grid.Row="1" Grid.Column="2" Text="Portada" FontSize="Large" HorizontalOptions="Center"/>
         
-        <!-- ListViewS -->
-        
-            
-            <!-- SEGUNDA FILA -->
-            <Label Text="Título" FontAttributes="Bold" FontSize="Subtitle" VerticalOptions="Center" Margin="20"
-                   Grid.Row="1" Grid.Column="0"/>
-            <Label Text="prueba" FontSize="Caption" VerticalOptions="Start" Grid.Row="1" Grid.Column="0"/>
-            
-        </Grid>
-    </VerticalStackLayout>
+        <!-- ListViews -->
+        <ListView x:Name="lvTitulo" ItemSelected="onLibroSeleccionado" HorizontalOptions="Start" Grid.Row="2" Grid.Column="0"/>
+        <ListView x:Name="lvAutorEditorial" ItemSelected="onAutorEditorialSeleccionado" HorizontalOptions="Start" Grid.Row="2" Grid.Column="1"/>
+
+        <!-- Imagen de la portada -->
+        <Image Grid.Row="2" Grid.Column="2" WidthRequest="150" HeightRequest="200" x:Name="imagenPortada" VerticalOptions="Start" HorizontalOptions="Center"/>
+
+    </Grid>
 </ContentPage>
