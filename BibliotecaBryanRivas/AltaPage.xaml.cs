@@ -21,6 +21,7 @@ public partial class AltaPage : ContentPage
         entryAutor.Text = string.Empty;
         entryEditorial.Text = string.Empty;
         imagenLibro.Source = null;
+
     }
 
     private async void onSelectImageClicked(object sender, EventArgs e)
@@ -51,6 +52,7 @@ public partial class AltaPage : ContentPage
         string titulo = entryTitulo.Text;
         string autor = entryAutor.Text;
         string editorial = entryEditorial.Text;
+		string imagePath = imagenLibro.Source.ToString();
 
         if (string.IsNullOrEmpty(titulo) || string.IsNullOrEmpty(autor) || string.IsNullOrEmpty(editorial) || imagePath == null)
         {
@@ -64,13 +66,7 @@ public partial class AltaPage : ContentPage
 		}
 		else
 		{
-			Libro libroNuevo = new Libro
-			{
-				Titulo = titulo,
-				Autor = autor,
-				Editorial = editorial,
-				Portada = imagePath
-			};
+			Libro libroNuevo = new Libro {Titulo = titulo, Autor = autor, Editorial = editorial, Portada = imagePath};
 
 			Biblioteca.biblioteca.Add(titulo, libroNuevo);
 

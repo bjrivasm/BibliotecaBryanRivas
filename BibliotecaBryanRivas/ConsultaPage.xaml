@@ -10,21 +10,22 @@
         
         <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical">
             <Label Grid.Row="0" Grid.Column="0" Text="Tipo de consulta:" FontSize="Large" VerticalOptions="Center" />
-            <RadioButton x:Name="radioAutor" Content="Autor" CheckedChanged="OnRadioButtonCheckedChanged" IsChecked="True"/>
-            <RadioButton x:Name="radioEditorial" Content="Editorial" CheckedChanged="OnRadioButtonCheckedChanged" />
+            <RadioButton x:Name="radioAutor" Content="Autor" CheckedChanged="OnRadioButtonCheckedChanged"/>
+            <RadioButton x:Name="radioEditorial" Content="Editorial" CheckedChanged="OnRadioButtonCheckedChanged"/>
         </StackLayout>
 
         <!-- FILA 2 -->
-        <Label Grid.Row="1" Grid.Column="0" Text="Título" FontSize="Large" />
-        <Label Grid.Row="1" Grid.Column="1" Text="Autor / Editorial" FontSize="Large" />
-        <Label Grid.Row="1" Grid.Column="2" Text="Portada" FontSize="Large" HorizontalOptions="Center"/>
-        
-        <!-- ListViews -->
-        <ListView x:Name="lvTitulo" ItemSelected="onLibroSeleccionado" HorizontalOptions="Start" Grid.Row="2" Grid.Column="0"/>
-        <ListView x:Name="lvAutorEditorial" ItemSelected="onAutorEditorialSeleccionado" HorizontalOptions="Start" Grid.Row="2" Grid.Column="1"/>
-
-        <!-- Imagen de la portada -->
-        <Image Grid.Row="2" Grid.Column="2" WidthRequest="150" HeightRequest="200" x:Name="imagenPortada" VerticalOptions="Start" HorizontalOptions="Center"/>
-
+        <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical">
+            <Label Grid.Row="1" Grid.Column="0" Text="Título" FontSize="Medium" />
+            <ListView x:Name="lvTitulo" ItemSelected="onTituloSeleccionado" Grid.Row="1" Grid.Column="0"/>
+        </StackLayout>
+        <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+            <Label Grid.Row="1" Grid.Column="1" Text="Autor / Editorial" FontSize="Medium"/>
+            <ListView x:Name="lvAutorEditorial" ItemSelected="onAutorEditorialSeleccionado" Grid.Row="1" Grid.Column="1"/>
+        </StackLayout>
+        <StackLayout Grid.Row="1" Grid.Column="2" Orientation="Vertical">
+            <Label Grid.Row="1" Grid.Column="2" Text="Portada" FontSize="Medium" HorizontalOptions="Center"/>
+            <Image x:Name="imagenPortada" Source="null" Grid.Row="2" Grid.Column="2" WidthRequest="150" HeightRequest="200" VerticalOptions="Start" HorizontalOptions="Center"/>
+        </StackLayout>
     </Grid>
 </ContentPage>
