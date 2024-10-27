@@ -43,13 +43,19 @@ public partial class ConsultaPage : ContentPage
     }
 
     private void onTituloSeleccionado(object sender, SelectedItemChangedEventArgs e)
-	{
-		if (e.SelectedItem != null)
-		{
-			string tituloLibro = e.SelectedItem.ToString();
+    {
+        if (e.SelectedItem != null)
+        {
+            string tituloLibro = e.SelectedItem.ToString();
 
-			imagenPortada.Source = ImageSource.FromFile(Biblioteca.biblioteca[tituloLibro].Portada);
-		}
+            var libroSeleccionado = Biblioteca.biblioteca.Values.FirstOrDefault(libro => libro.Titulo == tituloLibro);
+
+            if (libroSeleccionado != null)
+            {
+                imagenPortada.Source = ImageSource.FromFile(libroSeleccionado.Portada);
+            }
+        }
     }
+
 
 }

@@ -10,7 +10,7 @@ public partial class AltaPage : ContentPage
 		InitializeComponent();
 	}
 
-	private void onCleanClicked(object sender, EventArgs e)
+    private void onCleanClicked(object sender, EventArgs e)
     {
         limpiarCampos();
     }
@@ -48,30 +48,29 @@ public partial class AltaPage : ContentPage
 
     private void onSaveClicked(object sender, EventArgs e)
     {
-
         string titulo = entryTitulo.Text;
         string autor = entryAutor.Text;
         string editorial = entryEditorial.Text;
-		string imagePath = imagenLibro.Source.ToString();
 
-        if (string.IsNullOrEmpty(titulo) || string.IsNullOrEmpty(autor) || string.IsNullOrEmpty(editorial) || imagePath == null)
+        if (string.IsNullOrEmpty(titulo) || string.IsNullOrEmpty(autor) || string.IsNullOrEmpty(editorial) || string.IsNullOrEmpty(imagePath))
         {
             DisplayAlert("Error", "Por favor, completa todos los campos y selecciona una imagen.", "OK");
             return;
         }
 
-		if (Biblioteca.biblioteca.ContainsKey(titulo))
-		{
-			DisplayAlert("ERROR", "El libro introducido ya existe en la biblioteca", "Aceptar");
-		}
-		else
-		{
-			Libro libroNuevo = new Libro {Titulo = titulo, Autor = autor, Editorial = editorial, Portada = imagePath};
+        if (Biblioteca.biblioteca.ContainsKey(titulo))
+        {
+            DisplayAlert("ERROR", "El libro introducido ya existe en la biblioteca", "Aceptar");
+        }
+        else
+        {
+            Libro libroNuevo = new Libro { Titulo = titulo, Autor = autor, Editorial = editorial, Portada = imagePath };
 
-			Biblioteca.biblioteca.Add(titulo, libroNuevo);
+            Biblioteca.biblioteca.Add(titulo, libroNuevo);
 
-			DisplayAlert("", "El libro se ha añadido a la biblioteca", "Aceptar");
-			limpiarCampos();
-		}
+            DisplayAlert("", "El libro se ha añadido a la biblioteca", "Aceptar");
+            limpiarCampos();
+        }
     }
+
 }
